@@ -1,0 +1,76 @@
+<mvc:View controllerName="atom.ui.ctm.controller.Home" xmlns:mvc="sap.ui.core.mvc" xmlns:tnt="sap.tnt" displayBlock="true" xmlns="sap.f" xmlns:m="sap.m" xmlns:layout="sap.ui.layout" height="100%">
+    <ShellBar id="idShellBar" title="Central Task Manager" showSearch="false" showMenuButton="true" showNotifications="false" menuButtonPressed="handleMenuButton">
+        <profile>
+            <m:Avatar initials="UI" />
+        </profile>
+    </ShellBar>
+    <tnt:SideNavigation id="idSideMenu" height="100%" selectedKey="subItem3">
+        <tnt:NavigationList>
+            <tnt:NavigationListItem text="Item 1" icon="sap-icon://employee">
+                <tnt:NavigationListItem text="Sub Item 1" />
+                <tnt:NavigationListItem text="Sub Item 2" />
+                <tnt:NavigationListItem text="Sub Item 3" id="subItem3" key="subItem3" />
+                <tnt:NavigationListItem text="Sub Item 4" />
+            </tnt:NavigationListItem>
+            <tnt:NavigationListItem text="Item 2" icon="sap-icon://building">
+                <tnt:NavigationListItem text="Sub Item 1" />
+                <tnt:NavigationListItem text="Sub Item 2" />
+                <tnt:NavigationListItem text="Sub Item 3" />
+                <tnt:NavigationListItem text="Sub Item 4" />
+            </tnt:NavigationListItem>
+        </tnt:NavigationList>
+        <tnt:fixedItem>
+            <tnt:NavigationList>
+                <tnt:NavigationListItem text="Item 1" icon="sap-icon://employee" />
+                <tnt:NavigationListItem text="Item 2" icon="sap-icon://building" />
+                <tnt:NavigationListItem text="Item 3" icon="sap-icon://card" />
+            </tnt:NavigationList>
+        </tnt:fixedItem>
+    </tnt:SideNavigation>
+    <m:NavContainer id="navCon" width="98%" height="auto">
+        <m:pages />
+        <DynamicPage id="dynamicPageId" stickySubheaderProvider="iconTabBar" class="sapUiNoContentPadding" toggleHeaderOnTitleClick="{/titleClickable}">
+            <!-- DynamicPage Title -->
+            <title>
+                <DynamicPageTitle>
+                    <heading>
+                        <m:Title text="Header Title" />
+                    </heading>
+                    <breadcrumbs>
+                        <m:Breadcrumbs>
+                            <m:Link text="Home" />
+                            <m:Link text="Page 1" />
+                            <m:Link text="Page 2" />
+                            <m:Link text="Page 3" />
+                            <m:Link text="Page 4" />
+                            <m:Link text="Page 5" />
+                        </m:Breadcrumbs>
+                    </breadcrumbs>
+                </DynamicPageTitle>
+            </title>
+            <content />
+        </DynamicPage>
+    </m:NavContainer>
+
+    <DynamicPage id="dynamicPageId" stickySubheaderProvider="iconTabBar" class="sapUiNoContentPadding" toggleHeaderOnTitleClick="{/titleClickable}">
+                <!-- DynamicPage Title -->
+                <title>
+                    <DynamicPageTitle>
+                        <heading>
+                            <m:Title text="Header Title" />
+                        </heading>
+                        <breadcrumbs>
+                            <m:Breadcrumbs>
+                                <m:Link text="Home" />
+                                <m:Link text="Page 1" />
+                                <m:Link text="Page 2" />
+                                <m:Link text="Page 3" />
+                                <m:Link text="Page 4" />
+                                <m:Link text="Page 5" />
+                            </m:Breadcrumbs>
+                        </breadcrumbs>
+                    </DynamicPageTitle>
+                </title>
+                <content />
+            </DynamicPage>
+</mvc:View>

@@ -1,0 +1,91 @@
+<mvc:View controllerName="atom.ui.ctm.controller.App" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns:tnt="sap.tnt" xmlns:f="sap.f" xmlns="sap.m" xmlns:layout="sap.ui.layout">
+    <tnt:ToolPage id="toolPage">
+        <tnt:header>
+            <f:ShellBar id="idShellBar" title="Central Task Manager" showSearch="false" showMenuButton="true" showNotifications="false" menuButtonPressed="handleMenuButton">
+                <f:profile>
+                    <Avatar initials="UI" />
+                </f:profile>
+                <f:searchManager>
+                    <f:SearchManager />
+                </f:searchManager>
+            </f:ShellBar>
+        </tnt:header>
+        <tnt:sideContent>
+            <tnt:SideNavigation id="idSideMenu" height="100%" selectedKey="subItem3">
+                <tnt:NavigationList>
+                    <tnt:NavigationListItem text="My Tasks" icon="sap-icon://clinical-tast-tracker" />
+                    <tnt:NavigationListItem text="Completed Tasks" icon="sap-icon://task" />
+                    <tnt:NavigationListItem text="Deleted Tasks" icon="sap-icon://activity-assigned-to-goal" />
+                </tnt:NavigationList>
+            </tnt:SideNavigation>
+        </tnt:sideContent>
+        <tnt:mainContents>
+            <NavContainer id="pageContainer" width="100%" initialPage="page2">
+                <pages>
+                    <f:DynamicPage id="dynamicPageId" stickySubheaderProvider="iconTabBar" class="sapUiNoContentPadding" toggleHeaderOnTitleClick="{/titleClickable}">
+                        <!-- DynamicPage Title -->
+                        <f:title>
+                            <f:DynamicPageTitle>
+                                <f:breadcrumbs>
+                                    <Breadcrumbs>
+                                        <Link text="Home" />
+                                        <Link text="Page 1" />
+                                        <Link text="Page 2" />
+                                        <Link text="Page 3" />
+                                        <Link text="Page 4" />
+                                        <Link text="Page 5" />
+                                    </Breadcrumbs>
+                                </f:breadcrumbs>
+                            </f:DynamicPageTitle>
+                        </f:title>
+                        <f:content>
+                            <Table id="idTable" headerText="TableHeaderText" class="sapUiMediumMarginTop">
+                                <headerToolbar>
+                                    <OverflowToolbar id="otbSubheader">
+                                        <ToolbarSpacer />
+                                        <SearchField ariaLabelledBy="text1" id="maxPrice" liveChange="onFilter">
+                                            <layoutData>
+                                                <OverflowToolbarLayoutData maxWidth="300px" shrinkable="true" priority="NeverOverflow" />
+                                            </layoutData>
+                                        </SearchField>
+                                        <Button text="Reset" type="Transparent" press="onReset" />
+                                        <OverflowToolbarButton tooltip="Sort" type="Transparent" text="Sort" icon="sap-icon://sort" press="onSort" />
+                                        <OverflowToolbarButton tooltip="Group" type="Transparent" text="Group" icon="sap-icon://group-2" press="onGroup" />
+                                        <OverflowToolbarMenuButton tooltip="Export" type="Transparent" text="Export" buttonMode="Split" icon="sap-icon://share" defaultAction="onDefaultActionAccept" beforeMenuOpen="onBeforeMenuOpen" useDefaultActionOnly="true">
+                                            <menu>
+                                                <Menu itemSelected="onMenuAction">
+                                                    <MenuItem text="Export as PDF" icon="sap-icon://pdf-attachment" />
+                                                    <MenuItem text="Export to Excel" icon="sap-icon://excel-attachment" />
+                                                </Menu>
+                                            </menu>
+                                        </OverflowToolbarMenuButton>
+                                    </OverflowToolbar>
+                                </headerToolbar>
+                                <columns>
+                                    <Column id="Column1" width="12em">
+                                        <Text text="Column 1" />
+                                    </Column>
+                                    <Column id="Column2" minScreenWidth="Tablet" demandPopin="true">
+                                        <Text text="Column 2" />
+                                    </Column>
+                                    <Column id="Column3" minScreenWidth="Tablet" demandPopin="true" hAlign="End">
+                                        <Text text="Column 3" />
+                                    </Column>
+                                </columns>
+                                <items>
+                                    <ColumnListItem type="Active" vAlign="Middle" press="onPress">
+                                        <cells>
+                                            <Text text="Test" />
+                                            <Text text="Test" />
+                                            <Text text="Test" />
+                                        </cells>
+                                    </ColumnListItem>
+                                </items>
+                            </Table>
+                        </f:content>
+                    </f:DynamicPage>
+                </pages>
+            </NavContainer>
+        </tnt:mainContents>
+    </tnt:ToolPage>
+</mvc:View>
